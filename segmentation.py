@@ -2,7 +2,6 @@ import streamlit as st
 from PIL import Image
 import os
 import ultralytics
-# Load YOLOv8n-seg, train it on COCO128-seg for 3 epochs and predict an image with it
 from ultralytics import YOLO
 import cv2
 import pandas as pd

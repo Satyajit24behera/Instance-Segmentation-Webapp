@@ -141,25 +141,8 @@ def main():
                 results=segment_image(save_path)
                 
                 
-                img = cv2.imread(save_path) 
-                for result in results:
-                    boxes = result.boxes.cpu().numpy()
-
                 
-                    numCols = len(boxes)
-                    cols = st.columns(numCols) ## Dynamic Column Names
-                ## Annotating the individual boxes
-                    for box in boxes:
-                        r = box.xyxy[0].astype(int)
-                        rect = cv2.rectangle(img, r[:2], r[2:], (255, 55, 255), 2)
-                    for i, box in enumerate(boxes):
-                        r = box.xyxy[0].astype(int)
-                         ## crop image 
-                        ## retrieve the predicted name
-                        predicted_name = result.names[int(box.cls[0])] 
-                    
-                        names_list.append(predicted_name)
-                        
+                
                 new_extension=".avi"            
                 new_filename = replace_extension(filename, new_extension)
                 seg_path='/content/runs/segment/predict'
@@ -188,6 +171,24 @@ def main():
                     except Exception as e:
                         st.error(f"Error: {e}")
                         st.error("Invalid file path or image format. Please check and try again.")
+                for result in results:
+                    boxes = result.boxes.cpu().numpy()
+
+                
+                    numCols = len(boxes)
+                    cols = st.columns(numCols) ## Dynamic Column Names
+                ## Annotating the individual boxes
+                    for box in boxes:
+                        r = box.xyxy[0].astype(int)
+                        rect = cv2.rectangle(img, r[:2], r[2:], (255, 55, 255), 2)
+                    for i, box in enumerate(boxes):
+                        r = box.xyxy[0].astype(int)
+                         ## crop image 
+                        ## retrieve the predicted name
+                        predicted_name = result.names[int(box.cls[0])] 
+                    
+                        names_list.append(predicted_name)
+                             
 if __name__ == '__main__':
     main()
 

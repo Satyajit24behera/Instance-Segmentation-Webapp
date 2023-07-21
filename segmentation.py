@@ -34,7 +34,7 @@ def avi_to_mp4(input_file, output_file):
                     
 def main():
     
-        image = Image.open('logo.png')
+        image = Image.open('/content/Instance-Segmentation-Webapp/logo.png')
         st.image(image)
         
         st.title("Image and Video Instance Segmentation Web-app Using YOLOv8")

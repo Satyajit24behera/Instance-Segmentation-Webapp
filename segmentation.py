@@ -62,7 +62,7 @@ def main():
                 filename = os.path.basename(uploaded_file.name)
 
                 # Specify the directory to save the image
-                save_directory = "C:\\Users\\Satyajit\\Downloads\\Documents\\New folder"
+                save_directory = "/root"
 
                 # Save the image to the specified directory with the original filename
                 image.save(os.path.join(save_directory, filename))

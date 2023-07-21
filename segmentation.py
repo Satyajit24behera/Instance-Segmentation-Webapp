@@ -142,7 +142,7 @@ def main():
                 
                 
                 
-                
+                img = cv2.imread(save_path) 
                 new_extension=".avi"            
                 new_filename = replace_extension(filename, new_extension)
                 seg_path='/content/runs/segment/predict'

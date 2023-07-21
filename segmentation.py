@@ -70,7 +70,7 @@ def main():
                 
                 results=segment_image(single_face_img_path)
                 
-                seg_path="C:\\Users\\Satyajit\\OneDrive\\Documents\\Instance-Segmentation-using-PixelLib\\runs\\segment\\predict"
+                seg_path='/content/runs/segment/predict'
                 segmented_img_path = os.path.join(seg_path, filename)
                 image = Image.open(segmented_img_path)
                 st.image(image, caption="Uploaded Image", use_column_width=True)
@@ -124,7 +124,7 @@ def main():
                 filename = os.path.basename(uploaded_file.name)
 
                 # Specify the directory to save the video
-                save_directory = "C:\\Users\\Satyajit\\Downloads\\Documents\\New folder"
+                save_directory = "/root"
 
                 # Save the video to the specified directory with the original filename
                 save_path = os.path.join(save_directory, filename)
@@ -162,7 +162,7 @@ def main():
                         
                 new_extension=".avi"            
                 new_filename = replace_extension(filename, new_extension)
-                seg_path="C:\\Users\\Satyajit\\OneDrive\\Documents\\Instance-Segmentation-using-PixelLib\\runs\\segment\\predict"
+                seg_path='/content/runs/segment/predict'
                 segmented_img_path1 = os.path.join(seg_path, new_filename)
                 segmented_img_path = os.path.join(seg_path, filename)
                 avi_to_mp4(segmented_img_path1, segmented_img_path)

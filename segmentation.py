@@ -2,8 +2,6 @@ import streamlit as st
 from PIL import Image
 import os
 import ultralytics
-
-
 from ultralytics import YOLO
 import cv2
 import pandas as pd

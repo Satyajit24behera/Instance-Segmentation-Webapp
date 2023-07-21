@@ -155,12 +155,7 @@ def main():
                 st.video(video_bytes)
                 
                             
-                            
-                st.sidebar.markdown('#### Distribution of identified items')
 
-                df_x = pd.DataFrame(names_list)
-                summary_table = df_x[0].value_counts().rename_axis('unique_values').reset_index(name='counts')
-                st.sidebar.dataframe(summary_table)
     
                                 
                 file_path = segmented_img_path
@@ -188,6 +183,12 @@ def main():
                         predicted_name = result.names[int(box.cls[0])] 
                     
                         names_list.append(predicted_name)
+                                             
+                 st.sidebar.markdown('#### Distribution of identified items')
+ 
+                 df_x = pd.DataFrame(names_list)
+                 summary_table = df_x[0].value_counts().rename_axis('unique_values').reset_index(name='counts')
+                 st.sidebar.dataframe(summary_table)
                              
 if __name__ == '__main__':
     main()

@@ -1,7 +1,7 @@
 import streamlit as st
 from PIL import Image
 import os
-from Instance-Segmentation-Webapp import ultralytics
+import ultralytics
 # Load YOLOv8n-seg, train it on COCO128-seg for 3 epochs and predict an image with it
 from ultralytics import YOLO
 import cv2
